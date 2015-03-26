@@ -1,0 +1,6 @@
+
+  <p>
+<%= fp.check_box :sova, 	{checked: flash[:sova]} 	%>
+ 	<%=fp.label text %>
+  </p>
+ 

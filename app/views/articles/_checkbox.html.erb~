@@ -1,0 +1,4 @@
+
+<%=fp.check_box name,	{checked: flash[name]} 	%>
+<%=fp.label text %>
+<br>

@@ -1,0 +1,9 @@
+<%= fp.radio_button(name, "1", checked: (flash[name] == nil || flash[name] == 1 )) %>
+<%= fp.label(text1)		%>
+
+<%= fp.radio_button(name, "2", checked: flash[name] == 2 ) %>
+<%= fp.label(text2)			%>
+
+<%= fp.radio_button(name, "3", checked: flash[name] == 3 ) %>
+<%= fp.label(text3)
+<br>

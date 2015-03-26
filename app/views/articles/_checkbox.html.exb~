@@ -1,0 +1,4 @@
+<%= f.radio_button(:weather, "3", checked: flash[:weather] == 3 ) %>
+	<%= f.label("Погода 10%")			%>
+
+<br>

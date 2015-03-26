@@ -1,0 +1,43 @@
+<h3> Летаем ночью v3.7(редлики и перья, подковыч) </h3>
+<%= form_for :article, url: articles_path do |f| %>
+
+<%= render partial: "radio_button", locals: {text1: "Без снаряжения   ", text2: "Бинокль", text3: "Разведданные", fp: f, name: :time} %>
+
+<%= render partial: "radio_button", locals: {text1: "Нет бонуса погоды", text2: "Погода 5%", text3: "Погода 10%", fp: f, name: :weather} %>
+
+<%= render partial: "radio_button", locals: {text1: "Компасыч       ", text2: "Нет ожерелки :-(", text3: "Подковыч", fp: f, name: :ozherelka} %>
+
+<%= render partial: "checkbox", locals: {text: "Буст стаи", fp: f, name: :boost} %>
+<%= render partial: "checkbox", locals: {text: "Сова", fp: f, name: :sova} %>
+<%= render partial: "checkbox", locals: {text: "Клевер", fp: f, name: :kle} %>
+<%= render partial: "checkbox", locals: {text: "Удыч", fp: f, name: :ud} %>
+<%= render partial: "checkbox", locals: {text: "Канат", fp: f, name: :kanat} %>
+<%= render partial: "checkbox", locals: {text: "Светыч", fp: f, name: :sve} %>
+<%= render partial: "checkbox", locals: {text: "Большой солевик", fp: f, name: :redl} %>
+<%= render partial: "checkbox", locals: {text: "Средний солевик", fp: f, name: :fea} %>
+<%= render partial: "radio_button", locals: {text1: "Нет умелки на перья", text2: "Умелка 4ур", text3: "Умелка 5 ур", fp: f, name: :umelka} %>
+<p>
+    <%= f.submit "посчитать" %>
+</p>
+<% end %>
+<% if flash[:avg_flight] %>
+    <div class="notice">Шишек в среднем за полёт: <b><%= flash[:avg_flight] %></b>, за час: <b><font size="5"><%= flash[:avg_hour] %></b></font> </div>
+  <% end %>
+
+<% if flash[:redl_per_hour] %>
+    <div class="notice">Редликов в час: <b><%= flash[:redl_per_hour] %></b>, Перьев в час: <b><%= flash[:pero_per_hour] %></b> </div>
+  <% end %>
+<% if flash[:klever_spent] != nil && flash[:klever_spent] != 0 %>
+    <div class="notice">В среднем зарядов клевера потрачено в час: <b><%=flash[:klever_spent]%></b>, Клевер принесёт шишек: <b><%=flash[:klever_gives]%></b>
+<br>
+<br>
+Если вы купите клевер за <b>38 38 31 31</b>(цена со скидкой 10% от умелок и 15% от погоды), то продав эти пуговицы по 8 за 5 штук(база на барахолке с налогом) вы бы получили <b>220</b> шишек. 
+<% else %>
+<br>
+<br>
+  <% end %>
+<br>
+<br>
+<% if flash[:avg_flight] %>
+Шишек в максимум за полёт: <b><%= flash[:max_flight] %></b>, за час: <b><%= flash[:max_hour] %></b>
+  <% end %> 
