@@ -1,5 +1,5 @@
 <h3> Летаем ночью v3.7(редлики и перья, подковыч) </h3>
-<img align="right" src="http://fc03.deviantart.net/fs70/f/2011/131/4/5/angry_birds_flying_animation_by_raineli-d3g3yx7.gif" alt="T" width="170" height="70" />
+<img align="right" src="http://fc03.deviantart.net/fs70/f/2011/131/4/5/angry_birds_flying_animation_by_raineli-d3g3yx7.gif" alt="T" width="170" height=110" />
 <%= form_for :article, url: articles_path do |f| %>
 
 <%= render partial: "radio_button", locals: {text1: "Без снаряжения   ", text2: "Бинокль", text3: "Разведданные", fp: f, name: :time} %>

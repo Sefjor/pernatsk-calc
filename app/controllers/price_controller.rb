@@ -45,10 +45,15 @@ end
 	pos += 1
 end #while
 	pos -= 1
-
     while (ary[pos] == 0)
     pos -= 1
     end #while
+
+ case input
+  when 9900, 18900, 19800, 29700, 20790 
+    err = -1
+end
+
 flash[:err] = err
 flash[:p] = ary[pos]
 flash[:pp] = ary[pos - 1]
