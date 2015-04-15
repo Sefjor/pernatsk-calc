@@ -3,7 +3,7 @@ def show
 end
 def create
 err = 0
-input = params[:price][:txt].to_i
+input = params[:price][:txt].gsub(/\s+/, "").to_i
 if input == 0
 input = 23070
 err = 1
