@@ -45,7 +45,7 @@ end
 	pos += 1
 end #while
 	pos -= 1
-    while (ary[pos] == 0)
+    while ary[pos] == 0
     pos -= 1
     end #while
 
